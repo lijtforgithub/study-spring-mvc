@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           https://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/mvc
+           https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- MvcNamespaceUtils.registerDefaultComponents(context, source); -->
+    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven/>
+    <context:component-scan base-package="com.ljt.study.controller"/>
+
+
+    <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="synchronizeOnSession" value="true"/>
+    </bean>-->
+
+    <!--<bean class="org.springframework.web.servlet.handler.SimpleServletHandlerAdapter"/>
+    <bean id="/servlet" class="com.ljt.study.controller.SimpleServletHandlerAdapterServlet"/>-->
+
+
+    <!-- BeanNameUrlHandlerMapping -->
+    <bean id="/beanNameUrl-1" class="com.ljt.study.controller.BeanNameUrlHandlerMappingController1"/>
+    <bean name="/beanNameUrl-2" class="com.ljt.study.controller.BeanNameUrlHandlerMappingController2"/>
+
+
+    <!--<mvc:interceptors>
+        <bean class="com.ljt.study.interceptor.FirstInterceptor" />
+        <bean class="com.ljt.study.interceptor.SecondInterceptor" />
+    </mvc:interceptors>-->
+
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="suffix" value=".jsp"></property>
+        <property name="prefix" value="/jsp/"></property>
+    </bean>
+
+</beans>
