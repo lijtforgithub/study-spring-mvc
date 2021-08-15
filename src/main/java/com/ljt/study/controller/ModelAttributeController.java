@@ -1,0 +1,8 @@
+package com.ljt.study.controller;
+
+/**
+ * @author LiJingTang
+ * @date 2021-08-14 16:31
+ */
+public class ModelAttributeController {
+}
