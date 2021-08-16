@@ -1,5 +1,6 @@
 package com.ljt.study.controller;
 
+import com.ljt.study.vo.InitBinderVO;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -21,16 +23,17 @@ public class InitBinderController {
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        CustomDateEditor dateEditor = new CustomDateEditor(df, true);
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        CustomDateEditor dateEditor = new CustomDateEditor(dateFormat, true);
         binder.registerCustomEditor(Date.class, dateEditor);
     }
 
     @GetMapping
-    public Date formatDate(Date date) {
-        System.out.println(date);
-        return date;
-    }
+    public InitBinderVO setAsText(Date date, LocalDate localDate) {
+        InitBinderVO vo = InitBinderVO.builder().date(date).localDate(localDate).build();
+        System.out.println(vo);
 
+        return vo;
+    }
 
 }
