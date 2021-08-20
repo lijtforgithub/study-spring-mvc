@@ -20,8 +20,8 @@
         <property name="synchronizeOnSession" value="true"/>
     </bean>-->
 
-    <!--<bean class="org.springframework.web.servlet.handler.SimpleServletHandlerAdapter"/>
-    <bean id="/servlet" class="com.ljt.study.controller.SimpleServletHandlerAdapterServlet"/>-->
+    <bean class="org.springframework.web.servlet.handler.SimpleServletHandlerAdapter"/>
+    <bean id="/servlet" class="com.ljt.study.controller.SimpleServletHandlerAdapterServlet"/>
 
 
     <!-- BeanNameUrlHandlerMapping -->
