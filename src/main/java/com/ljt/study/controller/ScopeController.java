@@ -1,7 +1,7 @@
 package com.ljt.study.controller;
 
-import com.ljt.study.scope.RequestScopeBean;
-import com.ljt.study.scope.SessionScopeBean;
+import com.ljt.study.model.RequestScopeBean;
+import com.ljt.study.model.SessionScopeBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
