@@ -1,6 +1,6 @@
 package com.ljt.study.controller;
 
-import com.ljt.study.entity.User;
+import com.ljt.study.model.User;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

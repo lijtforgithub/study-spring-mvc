@@ -1,4 +1,4 @@
-package com.ljt.study.vo;
+package com.ljt.study.model;
 
 import lombok.Builder;
 import lombok.Data;

@@ -11,7 +11,6 @@
            https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!-- MvcNamespaceUtils.registerDefaultComponents(context, source); -->
-
     <mvc:annotation-driven/>
     <context:component-scan base-package="com.ljt.study"/>
 
@@ -20,8 +19,8 @@
         <property name="synchronizeOnSession" value="true"/>
     </bean>-->
 
-    <bean class="org.springframework.web.servlet.handler.SimpleServletHandlerAdapter"/>
-    <bean id="/servlet" class="com.ljt.study.controller.SimpleServletHandlerAdapterServlet"/>
+    <!--<bean class="org.springframework.web.servlet.handler.SimpleServletHandlerAdapter"/>
+    <bean id="/servlet" class="com.ljt.study.controller.SimpleServletHandlerAdapterServlet"/>-->
 
 
     <!-- BeanNameUrlHandlerMapping -->
@@ -29,13 +28,13 @@
     <bean name="/beanNameUrl-2" class="com.ljt.study.controller.BeanNameUrlHandlerMappingController2"/>
     <bean name="simpleController" class="com.ljt.study.controller.SimpleUrlHandlerMappingController"/>
 
-    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <!--<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
                 <prop key="/simpleUrl">simpleController</prop>
             </props>
         </property>
-    </bean>
+    </bean>-->
     <!-- 必须放在自定义SimpleUrlHandlerMapping之后 因为这个注解会自动注册SimpleUrlHandlerMapping -->
     <mvc:default-servlet-handler/>
 
@@ -47,12 +46,16 @@
             <mvc:mapping path="/attribute/*"/>
             <bean class="com.ljt.study.interceptor.AttributeInterceptor" />
         </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/record/*"/>
+            <bean class="com.ljt.study.interceptor.UserContextInterceptor" />
+        </mvc:interceptor>
     </mvc:interceptors>
 
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="suffix" value=".jsp"></property>
-        <property name="prefix" value="/jsp/"></property>
+        <property name="suffix" value=".jsp"/>
+        <property name="prefix" value="/jsp/"/>
     </bean>
 
 </beans>

@@ -1,4 +1,4 @@
-package com.ljt.study.entity;
+package com.ljt.study.model;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

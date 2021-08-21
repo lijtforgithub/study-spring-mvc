@@ -1,7 +1,7 @@
 package com.ljt.study.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.ljt.study.vo.JsonViewVO;
+import com.ljt.study.model.JsonViewVO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

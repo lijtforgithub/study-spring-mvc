@@ -1,6 +1,6 @@
 package com.ljt.study.controller;
 
-import com.ljt.study.vo.InitBinderVO;
+import com.ljt.study.model.InitBinderVO;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;

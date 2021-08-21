@@ -1,4 +1,4 @@
-package com.ljt.study.vo;
+package com.ljt.study.model;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.Data;
