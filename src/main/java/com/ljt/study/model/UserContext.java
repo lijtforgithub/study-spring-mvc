@@ -19,15 +19,4 @@ public class UserContext implements Serializable {
     private String name;
     private String mobile;
 
-    public void fillBaseModel(BaseModel model) {
-        final long time = System.currentTimeMillis();
-        final UserContext context = UserContextHolder.get();
-        model.setCreatorId(context.getId());
-        model.setCreator(context.getName());
-        model.setCreateTime(time);
-        model.setUpdaterId(context.getId());
-        model.setUpdater(context.getName());
-        model.setUpdateTime(time);
-    }
-
 }

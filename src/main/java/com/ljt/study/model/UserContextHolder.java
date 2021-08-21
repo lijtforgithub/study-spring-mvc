@@ -22,4 +22,14 @@ public class UserContextHolder {
         USER_CONTEXT.remove();
     }
 
+    public static void fillModel(UserContext context, BaseModel model) {
+        final long time = System.currentTimeMillis();
+        model.setCreatorId(context.getId());
+        model.setCreator(context.getName());
+        model.setCreateTime(time);
+        model.setUpdaterId(context.getId());
+        model.setUpdater(context.getName());
+        model.setUpdateTime(time);
+    }
+
 }

@@ -60,7 +60,7 @@ public class UserContextBeanFactoryPostProcessor implements BeanFactoryPostProce
                 BaseModel model = (BaseModel) obj;
                 final UserContext context = UserContextHolder.get();
                 if (Objects.nonNull(context)) {
-                    context.fillBaseModel(model);
+                    UserContextHolder.fillModel(context, model);
                 }
             }
 

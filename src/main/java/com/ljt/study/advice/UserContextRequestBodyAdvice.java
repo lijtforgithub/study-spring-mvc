@@ -30,7 +30,7 @@ public class UserContextRequestBodyAdvice extends RequestBodyAdviceAdapter {
             BaseModel model = (BaseModel) body;
             final UserContext context = UserContextHolder.get();
             if (Objects.nonNull(context)) {
-                context.fillBaseModel(model);
+                UserContextHolder.fillModel(context, model);
             }
         }
         return super.afterBodyRead(body, inputMessage, parameter, targetType, converterType);
