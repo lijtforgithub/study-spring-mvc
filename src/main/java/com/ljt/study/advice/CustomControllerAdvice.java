@@ -19,8 +19,18 @@ import java.util.Objects;
 public class CustomControllerAdvice {
 
     @InitBinder
-    public void initBinder(WebDataBinder binder) {
+    public void initBinderLocalDate(WebDataBinder binder) {
         binder.registerCustomEditor(LocalDate.class, new LocalDateEditor());
+    }
+
+    @InitBinder
+    public void initBinderString(WebDataBinder binder) {
+        binder.registerCustomEditor(String.class, new PropertyEditorSupport() {
+            @Override
+            public void setAsText(String text) throws IllegalArgumentException {
+                setValue(StringUtils.trimToNull(text));
+            }
+        });
     }
 
     @ModelAttribute("adviceModelAttr")
