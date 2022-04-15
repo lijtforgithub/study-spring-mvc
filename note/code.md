@@ -1,4 +1,4 @@
-~~~
+~~~java
 package com.ljt.study.servlet3;
 
 import org.springframework.context.annotation.ComponentScan;
